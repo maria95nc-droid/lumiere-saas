@@ -1,7 +1,8 @@
 {
-  "/page": "app/page.js",
+  "/_not-found/page": "app/_not-found/page.js",
+  "/api/projects/route": "app/api/projects/route.js",
   "/dashboard/page": "app/dashboard/page.js",
   "/new/page": "app/new/page.js",
-  "/api/projects/route": "app/api/projects/route.js",
+  "/page": "app/page.js",
   "/sites/[subdomain]/page": "app/sites/[subdomain]/page.js"
 }
