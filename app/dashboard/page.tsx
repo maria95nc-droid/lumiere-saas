@@ -28,7 +28,7 @@ export default async function DashboardPage() {
       where: { email: DEMO_EMAIL },
       include: { projects: { orderBy: { createdAt: "desc" } } },
     });
-    projects = (user?.projects ?? []) as typeof projects;
+    projects = (user?.projects ?? []) as unknown as typeof projects;
   } catch {
     dbError = true;
   }
