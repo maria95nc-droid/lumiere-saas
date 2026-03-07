@@ -38,8 +38,10 @@ export default async function SitePage({ params }: Props) {
 
   if (!project) notFound();
 
-  const theme = project.theme || "premium";
-  const primary = project.primaryColor || "#c9907a";
+  const p = project as any;
+
+  const theme = p.theme || "premium";
+  const primary = p.primaryColor || "#c9907a";
 
   // THEME TOKENS
   const T = {
