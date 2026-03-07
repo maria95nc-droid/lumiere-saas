@@ -29,6 +29,14 @@ model Project {
   services     String?
   businessType String?
   status       String   @default("draft")
+  theme        String?  @default("premium")
+  slogan       String?
+  email        String?
+  instagram    String?
+  facebook     String?
+  years        String?
+  treatments   String?
+  primaryColor String?  @default("#c9907a")
   createdAt    DateTime @default(now())
 }
 
