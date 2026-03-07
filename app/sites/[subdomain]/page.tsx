@@ -44,7 +44,7 @@ export default async function SitePage({ params }: Props) {
   const primary = p.primaryColor || "#c9907a";
 
   // THEME TOKENS
-  const T = {
+  const THEMES: Record<string, Record<string, string>> = {
     premium: {
       bg: "#faf7f3", bg2: "#f5ede6", text: "#3d2530", muted: "#8a6e65",
       accent: primary, dark: "#3d2530", border: "rgba(200,160,140,0.2)",
@@ -66,13 +66,8 @@ export default async function SitePage({ params }: Props) {
       navBg: "rgba(240,244,255,0.95)", heroBg: "linear-gradient(135deg,#f0f4ff 0%,#e8eeff 60%,#ddd6fe 100%)",
       cardBg: "#ffffff", btnRadius: "8px",
     },
-  }[theme] || {
-    bg: "#faf7f3", bg2: "#f5ede6", text: "#3d2530", muted: "#8a6e65",
-    accent: primary, dark: "#3d2530", border: "rgba(200,160,140,0.2)",
-    serif: "'Playfair Display',Georgia,serif", sans: "'DM Sans',sans-serif",
-    navBg: "rgba(250,247,243,0.95)", heroBg: "linear-gradient(135deg,#faf7f3 0%,#f5ede6 100%)",
-    cardBg: "#ffffff", btnRadius: "0px",
   };
+  const T = THEMES[theme] || THEMES["premium"];
 
   const serviceList = project.services
     ? project.services.split("\n").map((s: string) => s.trim()).filter(Boolean)
