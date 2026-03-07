@@ -1,4 +1,4 @@
-/** @type {import('next').NextConfig} */
+content = """/** @type {import('next').NextConfig} */
 const nextConfig = {
   experimental: {
     serverComponentsExternalPackages: ['@prisma/client', 'prisma'],
@@ -6,3 +6,6 @@ const nextConfig = {
 };
 
 module.exports = nextConfig;
+"""
+open('next.config.js', 'w').write(content)
+print("OK")
